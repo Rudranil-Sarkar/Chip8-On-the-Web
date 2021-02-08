@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+ <meta charset="utf-8">
+ <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+ <link type="text/css" href="dist/dialog-polyfill.css" />
+ <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+ 
+ <style>
+   html, body, pre, code, kbd, samp {
+     font-family: "Press Start 2P";
+    }
+    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>chip8</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+
+<script src="sketch.js"></script>
+<script src="chip8.js"></script>
+</head>
+<body style="margin:10px; margin-right: 40px">
+    <script src="./dialog-polyfill.js"></script>
+    <h3>Chip8 Emulator</h3>
+    <label for="default_select">Select Roms</label>
+    <div id='d', class='nes-select is-error'></div>
+    <br></br>
+    <div  id = 'c', class="nes-container is-rounded with-title is-centered", style="margin-right: 150px; margin-left: 150px; margin-bottom: 20px">
+            <p class="title">The Game Screen</p>
+    </div>
+
+    <div style="text-align: center">
+    <section style="display: inline;",>
+            <button type="button" class="nes-btn is-warning" style="display: inline" onclick="var dialog = document.getElementById('dialog-rounded1'); dialogPolyfill.registerDialog(dialog);;dialog.showModal()">
+              Show Controls
+            </button>
+            <dialog class="nes-dialog is-rounded" id="dialog-rounded1">
+              <form method="dialog">
+                <p class="title">In my implimentation Gamepad looks like this</p>
+                <div class="nes-table-responsive">
+                        <table class="nes-table is-bordered is-centered">
+                          <thead>
+                            <tr>
+                              <th>1</th>
+                              <th>2</th>
+                              <th>3</th>
+                              <th>4</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Q</td>
+                              <td>W</td>
+                              <td>E</td>
+                              <td>R</td>
+                            </tr>
+                            <tr>
+                              <td>A</td>
+                              <td>S</td>
+                              <td>D</td>
+                              <td>F</td>
+                            </tr>
+                            <tr>
+                                    <td>Z</td>
+                                    <td>X</td>
+                                    <td>C</td>
+                                    <td>V</td>
+                                  </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p>You have to find the correct controls for each rom from the given layout</p>
+                      <p>You can also press the F2 key reset the current rom</p>
+                <menu class="dialog-menu">
+                  <button class="nes-btn is-error">Back</button>
+                </menu>
+              </form>
+            </dialog>
+          </section>
+          <section style="display: inline">
+                <button type="button" class="nes-btn is-primary" onclick="var dialog = document.getElementById('dialog-rounded2'); dialogPolyfill.registerDialog(dialog);;dialog.showModal()">
+                  What is Chip8?
+                </button>
+                <dialog class="nes-dialog is-rounded" id="dialog-rounded2" style="margin: 10px">
+                  <form method="dialog">
+                    <p class="title">CHIP-8 is an interpreted programming language, developed by Joseph Weisbecker. It was initially used on the COSMAC VIP and Telmac 1800 8-bit microcomputers in the mid-1970s. CHIP-8 programs are run on a CHIP-8 virtual machine. It was made to allow video games to be more easily programmed for these computers</p>
+                    <menu class="dialog-menu">
+                      <button class="nes-btn is-error">Back</button>
+                      <button class="nes-btn is-primary" onclick="window.open('http://devernay.free.fr/hacks/chip8/C8TECH10.HTM'); return false">View Chip8 domumentation</button>
+                    </menu>
+                  </form>
+                </dialog>
+              </section>
+              <section style="display: inline">
+                    <button type="button" class="nes-btn is-error" onclick="var dialog = document.getElementById('dialog-rounded3'); dialogPolyfill.registerDialog(dialog);;dialog.showModal()">
+                      About Me
+                    </button>
+                    <dialog class="nes-dialog is-rounded" id="dialog-rounded3" style="margin: 10px">
+                      <form method="dialog">
+                        <p class="title">Just a regular student experimenting with different things</p>
+                        <p>I have also implimented the same thing in C++ you can check that out if you are interested</p>
+                        <p>Visit my github to see different projects</p>
+                        <p style="margin-left: 600px">---Wolfattackx</p>
+                        <menu class="dialog-menu">
+                            <button class="nes-btn">Cancel</button>
+                            <button class="nes-btn is-success" onclick="window.open('https://github.com/Wolfattackx'); return false;">Visit</button>
+                        </menu>
+                      </form>
+                    </dialog>
+                  </section>
+        </div>
+              
+</body>
+</html>

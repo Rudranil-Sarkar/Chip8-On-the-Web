@@ -1,0 +1,15 @@
+{
+  "name": "p5-chip8-emulator",
+  "version": "1.0.0",
+  "description": "A chip8 emulator made with p5.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Wolfattackx",
+  "license": "ISC",
+  "dependencies": {
+    "dialog-polyfill": "^0.5.0",
+    "express": "^4.17.1"
+  }
+}
